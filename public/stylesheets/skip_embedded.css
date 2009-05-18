@@ -1,0 +1,159 @@
+#flash_message {
+  position: absolute;
+  top: 3px;
+  left: 15%;
+  right: 15%;
+  width: 70%;
+  z-index: 2; }
+  #flash_message div {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: 12px;
+    border-width: 2px;
+    border-style: solid; }
+    #flash_message div h3 {
+      margin: 10px;
+      width: 100%; }
+      #flash_message div h3 span {
+        position: static;
+        font-size: 10px;
+        margin-left: 20px;
+        right: 15px;
+        top: 15px; }
+  #flash_message div.warn {
+    border-color: orange;
+    background-color: yellow; }
+  #flash_message div.notice {
+    border-color: limegreen;
+    background-color: palegreen; }
+  #flash_message div.error {
+    border-color: red;
+    background-color: pink; }
+
+div#header {
+  height: 55px;
+}
+
+div#header div#search {
+  position: absolute;
+  top: 25px;
+  right: 5px;
+}
+
+div#header div#search form {
+  margin:0;
+  padding:0;
+}
+
+div#header div#serach input {
+  font-family:Verdana,Arial,Sans-serif;
+  font-size:12px;
+  margin:0;
+  padding:2px;
+}
+
+input.input_submit{
+  padding: 0;
+  font-size:11px;
+}
+
+input.input_text{
+  padding: 0;
+}
+
+div#header div#menu {
+  background-color:#D0E0F0;
+  border:medium none;
+  font-size:12px;
+  padding:1px 5px;
+  position:absolute;
+  right:0;
+  text-align:right;
+  top:0;
+}
+
+div#header div#menu .item {
+  float:left;
+  font-weight:bold;
+  padding:3px 10px 1px;
+}
+
+div#header div#menu .item a {
+  color:blue;
+  text-decoration:none;
+}
+
+.labeled-field {
+  border: 1px solid silver;
+  color: rgb(153, 153, 153);
+  font-size: 13px; }
+
+.labeled-field.focus {
+  color: #000000; }
+
+iframe#ie-select-fix {
+  border : 0;
+  position : absolute;
+}
+
+body {
+  font-size: 12px;
+  font-family: Verdana, Arial, sans-serif;
+  color: #555555;
+  position: absolute;
+  left: 0;
+  margin: 0;
+  text-align: left;
+  background-color: #ffffff;
+  width: 100%; }
+
+div#main div#tab_body{
+  background-color:#FFFFFF;
+  margin-right:10px;
+  padding:10px;
+  position:relative;
+  border : 1px dashed silver;
+}
+
+img {
+  vertical-align: middle;
+  border: 0; }
+
+a {
+  text-decoration: none;
+  color: #0080dd; }
+  a:hover {
+    color: blue;
+    text-decoration: underline; }
+
+
+div#footer {
+  color: #A9A9A9;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  height: 50px;
+}
+div#footer .info {
+  width: 50em;
+  margin: auto;
+  padding: 5px 200px 0 0;
+}
+div#footer .info .first {
+  border-bottom:1px dashed silver;
+  padding-bottom:4px;
+}
+div#footer .info .second {
+  padding-top: 5px;
+}
+div#footer .powered_by {
+  position: absolute; top: 0px; right: 0px;
+}
+
+div#main {
+  position: relative;
+  padding: 10px 10px 10px 15px;
+  _width: 100%;
+  background : url("http://user.openskip.org/stylesheets/skins/silver/back.png");
+}

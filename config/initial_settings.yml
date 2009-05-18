@@ -1,0 +1,26 @@
+development:
+  skip_collaboration:
+    skip_url: "http://localhost:3000"
+    secret_key: "hogehogehogehoge"
+    fulltext_search:
+      endpoint:  "/search/full_text_search"
+      query_name: "full_text_query"
+    fixed_op:
+      disabled: false
+      fixed_openid_server_url: "http://localhost:3000/"
+      acceptable_op_urls:
+      - "http://localhost:3000/"
+
+test:
+  skip_collaboration:
+    skip_url: "http://test.openskip.org"
+    secret_key: "hogehogehogehoge"
+    fulltext_search:
+      endpoint:  "/search/full_text_search"
+      query_name: "full_text_query"
+    fixed_op:
+      disabled: true
+      fixed_openid_server_url: "http://www.myopenid.com"
+      acceptable_op_urls:
+      - "http://localhost:3200/server"
+

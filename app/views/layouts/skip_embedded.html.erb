@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="shortcut icon" href="<%= url_for('/favicon.ico')%>" />
+
+  <%= stylesheet_link_tag("skip_embedded") %>
+  <%= stylesheet_link_tag("sprites/sprites") %>
+
+  <%= yield :stylesheet %>
+  <%= javascript_include_tag(:jquery) %>
+</head>
+<body>
+  <div id="header">
+    <div id="logo">
+      <span class="app-name">SKIIP ---INSERT YOUR APP NAME---</span>
+    </div>
+
+    <div id="menu">
+      <% if signed_in? -%>
+        <div class="item" style="color: black;">
+          <%=h current_user.identity_url %>
+        </div>
+        <div class="item"><%= link_to "自分の管理", user_path(current_user) %></div>
+        <div class="item"><a href="FIXME" target="_blank">ヘルプ</a></div>
+        <div class="item"><%= link_to "ログアウト", signout_url %></div>
+      <% else %>
+        <div class="item"><%= link_to "ログイン", signin_url %></div>
+      <% end %>
+      <br style="clear: left" />
+
+    </div>
+    <% if SkipEmbedded::InitialSettings["skip_collaboration"]["fulltext_search"] -%>
+      <%= render(:partial => "shared/skip_full_text_search_form") %>
+    <% end -%>
+    <%=  render :partial=>"shared/flash_message" %>
+  </div>
+
+  <div id="main">
+    <div id="tab_body">
+      <%= yield %>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="info">
+      <div class="first">footer-first</div>
+      <div class="second">footer-second</div>
+    </div>
+    <div class="powered_by">powered by </div>
+  </div>
+</body>
+<%= javascript_include_tag(:skip) %>
+<% javascript_tag do -%>
+jQuery(function(){
+  <%= yield :javascript_initializer %>
+});
+<% end -%>
+</html>
+

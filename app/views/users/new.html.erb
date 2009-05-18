@@ -1,0 +1,25 @@
+<h1>Sign up</h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <table>
+    <tr>
+      <th> <%= f.label :name %></th>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <th> <%= f.label :display_name %></th>
+      <td><%= f.text_field :display_name %></td>
+    </tr>
+    <tr>
+      <th>OpenID URL</th>
+      <td><%=h session[:identity_url] %></td>
+    </tr>
+  </table>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', users_path %>

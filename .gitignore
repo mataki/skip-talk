@@ -1,4 +1,5 @@
 config/database.yml
+initial_settings.yml.sample
 db/schema.rb
 db/*.sqlite3
 log/*.log*
