@@ -54,5 +54,20 @@
         $("div#message_list ul").append("<li><span>(" + message.created_at + ")</span><a name=" + message.id + "></a>" + message.content + "</li>");
         $('html,body').animate({ scrollTop: $('li:last').offset().top }, 'slow');
       };
+
+//      setInterval(update, opts.interval);
+
+      function update(){
+        $.ajax({
+          type: "GET",
+          url: ".?format=js&newer_than="+$("div#message_list li:last a").attr('name'),
+          success: function(data){
+            var arr = eval('('+data+')');
+            $.each(arr, function(){
+              append_message(this);
+            });
+          }
+        })
+      };
     });
 
